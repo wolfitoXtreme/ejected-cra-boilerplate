@@ -1,0 +1,25 @@
+//
+// layout
+//
+
+// set breakpoints to EMS
+@if ($debug != true) {
+  @include breakpoint-set('to ems', true);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+
+  > div {
+    // targets #root container
+    min-height: 100%;
+  }
+
+  // test mediaQueries
+  @include queryInfo();
+}

@@ -1,0 +1,9 @@
+@import '~@styles/config/variables';
+
+.root {
+  padding: 20px 30px;
+
+  &-variant {
+    background-color: $light-grey;
+  }
+}
