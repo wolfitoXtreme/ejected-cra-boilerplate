@@ -29,6 +29,7 @@ const fs = require('fs');
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
+
 const appPackageJson = require(paths.appPackageJson);
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
