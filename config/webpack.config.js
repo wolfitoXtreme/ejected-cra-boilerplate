@@ -161,7 +161,7 @@ module.exports = function (webpackEnv) {
               ? { sourceMap: true }
               : {
                   sourceMap: true,
-                  prependData: '$env-production: ' + isEnvProduction + ';'
+                  additionalData: '$env-production: ' + isEnvProduction + ';'
                 }
         }
       );
