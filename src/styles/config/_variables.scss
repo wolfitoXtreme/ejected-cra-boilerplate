@@ -29,13 +29,13 @@ $default-font-fallback: Frutiger, 'Frutiger Linotype', Univers, Calibri,
 $default-font-family: unquote($default-font + ', ' + $default-font-fallback);
 
 // default heading fonts
-$heading-font: oswald;
+$heading-font: opensans;
 
 // font sizes
 $font-sizes: (
   tiny: 10px,
   x-small: 12px,
-  small: 15px,
+  small: 14px,
   normal: 16px,
   medium: 18px,
   medium-large: 20px,
@@ -58,28 +58,37 @@ $font-size-default: $font-size-medium;
 
 // line-height default
 $line-height-default: 1.15;
+$heading-tags: h1, h2, h3, h4, h5, h6;
+$text-block-tags: p, ul, ol, dl, pre, address, blockquote, table;
+$block-tags: article, aside, canvas, div, fieldset, figure, form, hgroup, output,
+  section, video;
+$heading-and-block-tags: join($heading-tags, $block-tags);
+$text-block-and-block-tags: join($text-block-tags, $block-tags);
 
 //
 // colors
 // ----------------
 $colors: (
-  black: #000,
+  black: #000000,
   light-black: #060606,
+  nero: #262626,
   charcoal: #404040,
   dim-grey: #616161,
   grey: #7f7f7f,
-  dark-grey: #aaa,
+  dark-grey: #aaaaaa,
   light-grey: #c9c9c9,
   very-light-grey: #d3d3d3,
   gainsboro: #e5e5e5,
   white: #ffffff,
-  persia-indigo: #551a8b,
-  red: #ff0000,
-  blue: #0000ee,
-  green: #108900
+  denim: #158ad3,
+  japanese-laurel: #32752e,
+  citrus: #a9bf05,
+  dark-slate-blue: #533e87,
+  red: #f20804
 );
 $black: nth(map-get($colors, black), 1);
 $light-black: nth(map-get($colors, light-black), 1);
+$nero: nth(map-get($colors, nero), 1);
 $charcoal: nth(map-get($colors, charcoal), 1);
 $dim-grey: nth(map-get($colors, dim-grey), 1);
 $grey: nth(map-get($colors, grey), 1);
@@ -88,39 +97,41 @@ $light-grey: nth(map-get($colors, light-grey), 1);
 $very-light-grey: nth(map-get($colors, very-light-grey), 1);
 $gainsboro: nth(map-get($colors, gainsboro), 1);
 $white: nth(map-get($colors, white), 1);
-$blue: nth(map-get($colors, blue), 1);
-$persia-indigo: nth(map-get($colors, persia-indigo), 1);
-$green: nth(map-get($colors, green), 1);
+$denim: nth(map-get($colors, denim), 1);
+$japanese-laurel: nth(map-get($colors, japanese-laurel), 1);
+$citrus: nth(map-get($colors, citrus), 1);
+$dark-slate-blue: nth(map-get($colors, dark-slate-blue), 1);
 $red: nth(map-get($colors, red), 1);
 
-// default font color
-$font-color-default: $light-black;
+// default colors
+$font-color-default: $black;
+$bg-color-default: $white;
 
 // link colors
 $link-colors: (
-  'link': $blue,
-  'visited': $persia-indigo,
-  'hover': $green,
-  'active': $red
+  'link': $denim,
+  'visited': $dark-slate-blue,
+  'hover': $japanese-laurel,
+  'active': $citrus
 );
 
 // form elements colors
 $field-colors: (
   field: (
-    color: $black,
-    background: $white,
-    border: $black,
+    color: $white,
+    background: $grey,
+    border: $nero,
     place-holder: $dark-grey
   ),
   hover: (
     color: $white,
     background: $white,
-    border: rgba($black, 0.7)
+    border: $black
   ),
   active: (
-    color: $black,
+    color: $white,
     background: $white,
-    border: rgba($white, 0.7)
+    border: $black
   )
 );
 
@@ -131,11 +142,21 @@ $error-color: $red;
 $btn-colors: (
   default: (
     color: $white,
-    background: $black,
+    background: $light-black,
     border: rgba($white, 0.32),
+    icon: rgba($white, 0.32),
     hover-color: $white,
     hover-background: rgba($white, 0.08),
-    hover-border: rgba($white, 0.7)
+    hover-border: rgba($white, 0.7),
+    hover-icon: rgba($white, 0.7)
+  ),
+  reset: (
+    color: rgba($white, 0.32),
+    background: $light-black,
+    border: rgba($white, 0.1),
+    hover-color: $white,
+    hover-background: rgba($white, 0.08),
+    hover-border: $white
   )
 );
 
@@ -154,8 +175,10 @@ $default-delay: 100ms;
 // layout
 // ----------------
 $breakpoints: (
+  'xx-small': 0px,
+  'x-small': 320px,
   'small': 360px,
   'medium': 768px,
   'large': 1024px
 );
-$app-max-width: 1400px;
+$app-max-width: 1280px;

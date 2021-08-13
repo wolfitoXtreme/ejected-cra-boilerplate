@@ -1,0 +1,136 @@
+//
+// placeholders
+//
+
+// default texts
+%default-texts {
+  margin: 16px 0;
+
+  @include breakpoint(map-get($breakpoints, small)) {
+    margin: 18px 0;
+  }
+
+  @include breakpoint(map-get($breakpoints, large)) {
+    margin: 22px 0;
+  }
+
+  // any heading or block element following a text block
+  @for $i from 1 through length($heading-and-block-tags) {
+    & + #{nth($heading-and-block-tags, $i)} {
+      margin-top: 12px;
+
+      @include breakpoint(map-get($breakpoints, small)) {
+        margin-top: 18px;
+      }
+
+      @include breakpoint(map-get($breakpoints, medium)) {
+        margin-top: 24px;
+      }
+
+      @include breakpoint(map-get($breakpoints, large)) {
+        margin-top: 34px;
+      }
+    }
+  }
+}
+
+// lists
+%lists {
+  padding: 0;
+  list-style: none;
+  @extend %default-texts;
+
+  // nested lists and paragraphs
+  & p,
+  & ul,
+  & ol {
+    &:first-child,
+    &:last-child {
+      margin-bottom: 16px;
+    }
+  }
+
+  p:only-child {
+    margin: 0;
+  }
+}
+
+// list - items
+%list-items {
+  margin: 0 0 4px;
+  padding: 0 0 0 10px;
+
+  @include breakpoint(map-get($breakpoints, small)) {
+    padding: 0 0 0 12px;
+  }
+  @include breakpoint(map-get($breakpoints, medium)) {
+    padding: 0 0 0 14px;
+  }
+  @include breakpoint(map-get($breakpoints, large)) {
+    margin: 0 0 6px;
+    padding: 0 0 0 18px;
+  }
+
+  p:only-child {
+    padding: 0;
+  }
+}
+
+%bullets-level-1 {
+  $bullet-size: 4px;
+
+  content: '';
+  top: (1em * $line-height-default) / 2;
+  left: 0;
+  margin-top: -($bullet-size / 2);
+  width: $bullet-size;
+  height: $bullet-size;
+  display: block;
+  border-radius: 100%;
+  position: absolute;
+  background-color: $black;
+
+  @include breakpoint(map-get($breakpoints, small)) {
+    $bullet-size: 5px;
+
+    margin-top: -($bullet-size / 2);
+    width: $bullet-size;
+    height: $bullet-size;
+  }
+
+  @include breakpoint(map-get($breakpoints, medium)) {
+    $bullet-size: 6px;
+
+    margin-top: -($bullet-size / 2);
+    width: $bullet-size;
+    height: $bullet-size;
+  }
+}
+
+%bullets-level-2 {
+  $bullet-size: 4px;
+
+  margin-top: -($bullet-size / 2);
+  width: $bullet-size;
+  height: $bullet-size;
+  border: 1px solid $black;
+  background-color: transparent;
+
+  @include breakpoint(map-get($breakpoints, medium)) {
+    $bullet-size: 6px;
+
+    margin-top: -($bullet-size / 2);
+    width: $bullet-size;
+    height: $bullet-size;
+  }
+}
+
+%bullets-level-3 {
+  $bullet-size: 1px;
+
+  margin-top: -($bullet-size / 2);
+  height: $bullet-size;
+  border-style: none;
+  border-radius: 0;
+  background-color: $black;
+}

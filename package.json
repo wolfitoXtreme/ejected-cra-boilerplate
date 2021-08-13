@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "^14.14.0"
+    "node": "^14.14.0",
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -29,7 +30,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "5.0.0",
-    "dotenv": "8.2.0",
+    "dotenv": "^9.0.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^7.21.0",
     "eslint-config-react-app": "^6.0.0",
@@ -62,9 +63,12 @@
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-refresh": "^0.8.3",
+    "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
     "react-svg": "^11.2.1",
     "redux": "^4.0.5",
     "resolve": "1.18.1",
@@ -85,10 +89,13 @@
   "devDependencies": {
     "babel-plugin-root-import": "^6.6.0",
     "breakpoint-sass": "^2.7.1",
-    "classnames": "^2.2.6",
+    "clsx": "^1.1.1",
     "dts-css-modules-loader": "^1.1.1",
+    "final-form": "^4.20.1",
+    "nodemon": "^2.0.7",
     "normalize.css": "^8.0.1",
     "prettier": "2.2.1",
+    "react-final-form": "^6.5.2",
     "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^4.1.0",
